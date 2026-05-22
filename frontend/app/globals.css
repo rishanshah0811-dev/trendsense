@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #050505;
+  --color-surface: #0d0d0d;
+  --color-border: #1a1a1a;
+  --color-text-primary: #e8e8e8;
+  --color-text-secondary: #555555;
+  --color-bullish: #00e676;
+  --color-bearish: #ff1744;
+  --color-neutral: #555555;
+  --color-accent: #ffab00;
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-display);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #050505;
+  color: #e8e8e8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.stagger-1 { animation: fadeUp 0.5s ease forwards; }
+.stagger-2 { animation: fadeUp 0.5s ease 0.08s forwards; opacity: 0; }
+.stagger-3 { animation: fadeUp 0.5s ease 0.16s forwards; opacity: 0; }
+.stagger-4 { animation: fadeUp 0.5s ease 0.24s forwards; opacity: 0; }
+.stagger-5 { animation: fadeUp 0.5s ease 0.32s forwards; opacity: 0; }
+
+.pulse-active {
+  animation: pulseGlow 1.5s ease-in-out infinite;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: #1a1a1a;
+  border-radius: 2px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffab00;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffab00;
+  cursor: pointer;
+  border: none;
+}
