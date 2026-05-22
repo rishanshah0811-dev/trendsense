@@ -40,7 +40,14 @@ This is a research and analysis tool, not financial advice. Do not trade based s
 - **Frontend**: Next.js 15, TypeScript, Tailwind CSS, lightweight-charts (TradingView), Recharts
 - **Deployment**: Railway (backend), Vercel (frontend)
 
-## Setup
+## Live demo
+
+- **Frontend**: [trendsense-iota.vercel.app](https://trendsense-iota.vercel.app)
+- **Backend API**: [trendsense-production.up.railway.app](https://trendsense-production.up.railway.app/health)
+
+Enter a ticker, and run the analysis. The pipeline takes 2-4 minutes depending on the grid search.
+
+## Local setup
 
 ### Backend
 
@@ -62,9 +69,4 @@ echo "NEXT_PUBLIC_API_URL=http://localhost:8000" > .env.local
 npm run dev
 ```
 
-Open http://localhost:3000, enter a ticker, and run the analysis. The pipeline takes 2-4 minutes depending on the grid search.
-
-## Deployment
-
-1. Deploy backend to Railway. Set `FRONTEND_URL` to your Vercel URL after step 2.
-2. Deploy frontend to Vercel. Set `NEXT_PUBLIC_API_URL` to the Railway backend URL.
+Open http://localhost:3000 to use the app locally.
